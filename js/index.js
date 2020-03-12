@@ -82,3 +82,23 @@ title.addEventListener("mouseover", e => {
 title.addEventListener("mouseout", e => {
   title.textContent = "Fun Bus";
 });
+
+//Copyright Scroll Wheel | Changes year in a wheel of years array
+const copyright = document.getElementsByTagName("footer")[0].children[0];
+let step = 0;
+const years = ["2019", "2020", "2021", "2022"];
+copyright.addEventListener("wheel", e => {
+  if (step === 0) {
+    copyright.textContent = `Copyright Fun Bus ${years[step]}`;
+    step++;
+  } else if (step === 1) {
+    copyright.textContent = `Copyright Fun Bus ${years[step]}`;
+    step++;
+  } else if (step === 2) {
+    copyright.textContent = `Copyright Fun Bus ${years[step]}`;
+    step++;
+  } else if (step === 3) {
+    copyright.textContent = `Copyright Fun Bus ${years[step]}`;
+    step = 0;
+  }
+});
