@@ -17,6 +17,7 @@ navLinks.forEach(l => {
   // Nest propogation
   l.addEventListener("mouseover", e => {
     l.style.background = "gray";
+    gsap.to(l, { duration: 3, rotationY: 360 });
     e.stopPropagation();
     setTimeout(() => {
       l.style.background = "white";
@@ -57,6 +58,20 @@ const images = Array.from(document.getElementsByTagName("img"));
 images.forEach(i => {
   i.addEventListener("dblclick", e => {
     i.style.display = "none";
+  });
+});
+
+//Stretch Animation
+images.forEach(i => {
+  i.addEventListener("click", e => {
+    gsap.to(i, {
+      duration: 3,
+      x: 25,
+      y: 25,
+      scale: 1,
+      skewX: 25,
+      rotation: 360
+    });
   });
 });
 
