@@ -50,3 +50,13 @@ text.forEach(t => {
     }, 200);
   });
 });
+
+//On load welcome message
+window.addEventListener("load", e => {
+  alert("Page has loaded!");
+});
+
+//Log window size on resize
+window.addEventListener("resize", e => {
+  alert(`Height: ${window.innerHeight}, Width: ${window.innerWidth}`);
+});
