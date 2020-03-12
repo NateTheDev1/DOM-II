@@ -72,3 +72,13 @@ buttons.forEach(b => {
     alert(`You Selected: ${title}`);
   });
 });
+
+//Change title on hover
+const title = document.querySelector(".logo-heading");
+title.addEventListener("mouseover", e => {
+  title.textContent = "The Best Bus";
+});
+
+title.addEventListener("mouseout", e => {
+  title.textContent = "Fun Bus";
+});
