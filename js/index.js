@@ -8,6 +8,30 @@ navLinks.forEach(l => {
       l.style.color = "gray";
     }, 500);
   });
+
+  //Prevent Default
+  l.addEventListener("click", e => {
+    e.preventDefault();
+  });
+
+  // Nest propogation
+  l.addEventListener("mouseover", e => {
+    l.style.background = "gray";
+    e.stopPropagation();
+    setTimeout(() => {
+      l.style.background = "white";
+    }, 500);
+  });
+});
+
+//Nest propogation
+const nav = document.querySelector(".nav");
+nav.addEventListener("mouseover", e => {
+  nav.style.background = "gray";
+
+  setTimeout(() => {
+    nav.style.background = "white";
+  }, 500);
 });
 
 //Logs the key pressed
