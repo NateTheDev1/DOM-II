@@ -60,3 +60,15 @@ window.addEventListener("load", e => {
 window.addEventListener("resize", e => {
   alert(`Height: ${window.innerHeight}, Width: ${window.innerWidth}`);
 });
+
+//Button Event, logs title of parent element
+const buttons = Array.from(
+  document.querySelector(".content-pick").querySelectorAll(".btn")
+);
+
+buttons.forEach(b => {
+  b.addEventListener("click", e => {
+    let title = b.parentElement.getElementsByTagName("h4")[0].innerText;
+    alert(`You Selected: ${title}`);
+  });
+});
