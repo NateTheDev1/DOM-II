@@ -1,4 +1,3 @@
-// Your code goes here
 const navLinks = document.querySelectorAll(".nav-link");
 
 //Adds a hover effect to each nav link
@@ -26,4 +25,28 @@ window.addEventListener("wheel", e => {
     document.body.style.background = "blue";
     switchNum = 0;
   }
+});
+
+//Remove images on double click
+const images = Array.from(document.getElementsByTagName("img"));
+
+images.forEach(i => {
+  i.addEventListener("dblclick", e => {
+    i.style.display = "none";
+  });
+});
+
+//Highlight event for all text
+let text = Array.from(document.getElementsByTagName("p"));
+const headers = Array.from(document.getElementsByTagName("h2"));
+text = text.concat(headers);
+
+text.forEach(t => {
+  t.addEventListener("mouseover", e => {
+    t.style.color = "red";
+
+    setTimeout(() => {
+      t.style.color = "black";
+    }, 200);
+  });
 });
